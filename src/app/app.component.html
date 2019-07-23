@@ -1,21 +1,156 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
+<div class="container">
+  <br>
+  <h1>pipes</h1>
+  <hr>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Variable</th>
+      <th scope="col">Pipe</th>
+      <th scope="col">Producto</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr> <!-- Uppercase nos permite volver la data en mayuscula -->
+    <td>  {{ nombre }}  </td>
+    <td>  uppercase  </td>
+    <td>  {{ nombre | uppercase }} </td>
+  </tr>
+    <tr> <!-- lowercase nos permite volver la data en minusculas -->
+    <td>  {{ nombre }} </td>
+    <td>  lowercase  </td>
+    <td>  {{ nombre | lowercase }} </td>
+  </tr>
+    <tr> <!-- slice nos permite cortar datos de la data -->
+    <td>  {{ nombre }} </td>
+    <td>  slice:2  </td>
+    <td>  {{ nombre | slice:2 }} </td>
+  </tr>
+    <tr> <!-- slice nos permite cortar datos de la data -->
+    <td>  {{ nombre }} </td>
+    <td>  slice:1:4 </td>
+    <td>  {{ nombre | slice:1:4 }} </td>
+  </tr>
+  <tr> <!-- slice nos permite cortar datos de la data -->
+    <td>  {{ arreglo }} </td>
+    <td>  slice:0:5 </td>
+    <td>  {{ arreglo | slice:0:5 }} </td>
+  </tr>
+  <tr> <!-- Decimal Pipe nos permite asegurarnos de que la data tenga un formato deseado -->
+    <td>  {{ PI }} </td>
+    <td> number: '3.0-0' </td>
+    <td>  {{ PI | number: '3.0-0' }} </td>
+  </tr>
+  <tr> <!-- Decimal Pipe nos permite asegurarnos de que la data tenga un formato deseado -->
+    <td>  {{ PI }} </td>
+    <td> number: '1.0-2' </td>
+    <td>  {{ PI | number: '1.0-2' }} </td>
+  </tr>
+  <tr> <!-- currency y number pipe nos permite mostrar formatos de moneda  -->
+    <td>  {{ salario  }} </td>
+    <td> number:'.2-2' </td>
+    <td>  {{ salario | number:'.2-2' }} </td>
+  </tr>
+  <tr> <!-- percent nos permite utilizar porcentajes  -->
+    <td>  {{ a }} </td>
+    <td> percent </td>
+    <td>  {{ a | percent }} </td>
+  </tr>
+  <tr> <!-- percent nos permite utilizar porcentajes  -->
+    <td>  {{ a }} </td>
+    <td> percent:'2.2-2' </td>
+    <td>  {{ a | percent:'2.2-2' }} </td>
+  </tr>
+  <tr> <!-- currency pipe nos permite mostrar formatos de moneda  -->
+    <td>  {{ salario  }} </td>
+    <td> currency </td>
+    <td>  {{ salario | currency }} </td>
+  </tr>
+  <tr> <!-- currency pipe nos permite mostrar formatos de moneda  -->
+    <td>  {{ salario  }} </td>
+    <td> currency:'MXN' </td>
+    <td>  {{ salario | currency:'MXN' }} </td>
+  </tr>
+  <tr> <!-- currency pipe nos permite mostrar formatos de moneda  -->
+    <td>  {{ salario  }} </td>
+    <td> currency:'MXN':false </td>
+    <td>  {{ salario | currency:'MXN':false }} </td>
+  </tr>
+  <tr> <!-- currency pipe nos permite mostrar formatos de moneda  -->
+    <td>  {{ salario  }} </td>
+    <td> currency:'MXN':false:'4.0-0' </td>
+    <td>  {{ salario | currency:'MXN':false:'4.0-0' }} </td>
+  </tr>
+  <tr> <!-- POSTERIOR ANGULAR 5 currency pipe nos permite mostrar formatos de moneda  -->
+    <td>  {{ salario  }} </td>
+    <td> currency:'USD'false</td>
+    <td>  {{ salario | currency:'USD':false}} </td>
+  </tr>
+  <tr>
+    <td>  {{ valorDePromesa }} </td>
+    <td>  async  </td>
+    <td>  {{ valorDePromesa | async }} </td>
+  </tr>
+  <tr> <!-- date nos permitira mostrar la fecha en distintos formatos, personalizados -->
+    <td>  {{ fecha  }} </td>
+    <td>  date </td>
+    <td>  {{ fecha | date }} </td>
+  </tr>
+  <tr> <!-- date nos permitira mostrar la fecha en distintos formatos, personalizados -->
+    <td>  {{ fecha  }} </td>
+    <td>  date:'medium' </td>
+    <td>  {{ fecha | date:'medium' }} </td>
+  </tr>
+  <tr> <!-- date nos permitira mostrar la fecha en distintos formatos, personalizados -->
+    <td>  {{ fecha  }} </td>
+    <td>  date:'MMMM - dd' </td>
+    <td>  {{ fecha | date:'MMMM - dd' }} </td>
+  </tr>
+  <tr> <!-- Este es un pipe personalizado, llamado "Capitalizado" -->
+    <td>  {{ nombre2 }} </td>
+    <td> capitalizado  </td>
+    <td>  {{ nombre2  | capitalizado  }} </td>
+  </tr>
+  <tr> <!-- Este es un pipe personalizado, llamado "Capitalizado" -->
+    <td>  {{ nombre2 }} </td>
+    <td> capitalizado  </td>
+    <td>  {{ nombre2  | capitalizado:false  }} </td>
+  </tr>
+  <tr> <!-- Este es un pipe personalizado, llamado "contrasena: el cual nos permitira ocultar un texto" -->
+    <td>  {{ pass }} </td>
+    <td>
+       contrasena: {{ activar }}
+       <br>
+       <button (click)="activar = !activar"
+        type="button"
+        class="<btn btn-outline-primary">Activar/desactivar</button>"
+      </td>
+    <td>  {{ pass | contrasena:activar }} </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<!-- otra forma de utilizar el pipe slice -->
+<h4>Slice</h4>
 <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+  <li *ngFor="let item of arreglo | slice:5:20"> {{ item }} </li>
 </ul>
 
-<router-outlet></router-outlet>
+<h4>JSON</h4>
+<pre>
+  {{ heroe | json }}
+</pre>
+
+<br>
+<h4>YouTube <small>video</small></h4>
+<hr>
+<iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/' " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+</div>
+
+
+<br><br><br><br><br><br><br><br><br>
